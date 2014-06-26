@@ -6,7 +6,7 @@ This is an Alfred 2 workflow to provide you a faster way to navigate your filesy
 
 Type `j` and a part of directory names. Then it will display directories which you use most.
 
-![](http://i.gyazo.com/50eb51068a2000d78f4ea0aec9fe0dd7.gif)
+![](http://i.gyazo.com/1f9854780e6c41e9ec75bf71970b7d2c.gif)
 
 If matched directories are not found. Then it will display list of your commonly used directories by `autojump -s`.
 
