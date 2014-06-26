@@ -20,6 +20,10 @@ If matched directories are not found. Then it will display list of your commonly
 1. Download [autojump.alfredworkflow](https://github.com/giginet/alfred-autojump-workflow/blob/master/autojump.alfredworkflow)
 2. Double-click to import into Alfred 2
 
+## Detail
+
+http://giginet.hateblo.jp/entry/2014/06/26/113624
+
 ## Acknowledge
 
 I use this library to output compatible XML with Alfred.
