@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>org.kawaz.dash.workflow</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>418ED302-B482-4959-9DB7-2FF667AA0C9A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>18B95FFB-E89F-4108-99A8-2BB887A59221</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>giginet</string>
+	<key>description</key>
+	<string>Search directory via autojump</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Autojump</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>18B95FFB-E89F-4108-99A8-2BB887A59221</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>j</string>
+				<key>script</key>
+				<string>import commands
+import re
+from feedback import Feedback
+
+query = '{query}'
+directory = commands.getoutput('autojump/bin/autojump %s' % query)
+
+fb = Feedback()
+
+if directory:
+	fb.add_item("Open %s" % directory, arg=directory)
+	print fb
+else:
+	stats = commands.getoutput('autojump/bin/autojump -s')
+	candidates = reversed(stats.split('\n'))
+	for dir in candidates:
+		match = re.match('^\d+\.\d:\s+(?P&lt;path&gt;/.+)$', dir)
+		if match:
+			path = match.group('path')
+			fb.add_item('Open %s' % path, arg=path)
+	print fb
+</string>
+				<key>subtext</key>
+				<string>Jump contains "..."</string>
+				<key>title</key>
+				<string>Open with autojump</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>418ED302-B482-4959-9DB7-2FF667AA0C9A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>18B95FFB-E89F-4108-99A8-2BB887A59221</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>418ED302-B482-4959-9DB7-2FF667AA0C9A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
