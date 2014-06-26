@@ -20,4 +20,8 @@ If matched directories are not found. Then it will display list of your commonly
 1. Click the download buttons below
 2. Double-click to import into Alfred 2
 
+## Acknowledge
 
+I use this library to output compatible XML with Alfred.
+
+[peteokma/alfred-workflows](https://github.com/peteokma/alfred-workflows)
