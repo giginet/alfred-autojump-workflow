@@ -93,9 +93,19 @@ else:
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>open {query}</string>
+				<string>import os
+import commands
+
+AUTOJUMP = 'autojump/bin/autojump'
+
+query = '{query}'
+
+abspath = os.path.abspath(AUTOJUMP)
+os.chdir(query)
+out = commands.getoutput('python %s -i' % abspath)
+commands.getoutput('open %s' % query)</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>3</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.script</string>
