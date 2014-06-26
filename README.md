@@ -1,4 +1,4 @@
-# autojump.alfredworkfrow
+# autojump.alfredworkflow
 
 This is an Alfred 2 workflow to provide you a faster way to navigate your filesystem via [autojump](https://github.com/joelthelion/autojump)
 
@@ -17,7 +17,7 @@ If matched directories are not found. Then it will display list of your commonly
 2. [Alfred Powerpack](https://buy.alfredapp.com/)
 
 ## Installing
-1. Click the download buttons below
+1. Download [autojump.alfredworkflow](https://github.com/giginet/alfred-autojump-workflow/blob/master/autojump.alfredworkflow)
 2. Double-click to import into Alfred 2
 
 ## Acknowledge
