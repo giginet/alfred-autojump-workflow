@@ -45,6 +45,8 @@ import re
 import os
 from feedback import Feedback
 
+os.putenv('AUTOJUMP_SOURCED', '1')
+
 IMG = os.path.join('autojump', 'bin', 'icon.png')
 AUTOJUMP = os.path.join('autojump', 'bin', 'autojump')
 COMMAND = '%s --complete %s'
