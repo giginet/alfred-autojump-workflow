@@ -45,6 +45,8 @@ import re
 import os
 from feedback import Feedback
 
+os.putenv('AUTOJUMP_SOURCED', '1')
+
 IMG = os.path.join('autojump', 'bin', 'icon.png')
 AUTOJUMP = os.path.join('autojump', 'bin', 'autojump')
 COMMAND = '%s --complete %s'
@@ -58,8 +60,9 @@ if directories:
 	candidates = directories.split('\n')
 	for dir in candidates:
 		match = re.match(r'^(.+?)__[1-9]__(?P&lt;path&gt;/.+)$', dir)
-		path = match.group('path')
-		fb.add_item("Open %s" % path, arg=path, icon=IMG)
+		if match:
+			path = match.group('path')
+			fb.add_item("Open %s" % path, arg=path, icon=IMG)
 	print fb
 else:
 	stats = commands.getoutput('autojump/bin/autojump -s')

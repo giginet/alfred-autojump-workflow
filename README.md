@@ -17,7 +17,7 @@ If matched directories are not found. Then it will display list of your commonly
 2. [Alfred Powerpack](https://buy.alfredapp.com/)
 
 ## Installing
-1. Download [autojump.alfredworkflow](https://github.com/giginet/alfred-autojump-workflow/blob/master/autojump.alfredworkflow)
+1. Download [autojump.alfredworkflow](autojump.alfredworkflow?raw=)
 2. Double-click to import into Alfred 2
 
 ## Detail
