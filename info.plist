@@ -60,8 +60,9 @@ if directories:
 	candidates = directories.split('\n')
 	for dir in candidates:
 		match = re.match(r'^(.+?)__[1-9]__(?P&lt;path&gt;/.+)$', dir)
-		path = match.group('path')
-		fb.add_item("Open %s" % path, arg=path, icon=IMG)
+		if match:
+			path = match.group('path')
+			fb.add_item("Open %s" % path, arg=path, icon=IMG)
 	print fb
 else:
 	stats = commands.getoutput('autojump/bin/autojump -s')
